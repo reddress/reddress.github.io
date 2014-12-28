@@ -16,9 +16,15 @@
   document.body.appendChild(renderer.domElement);
 
   var geometry = new three.BoxGeometry(0.3, 0.3, 0.0001);
-  var material = new three.MeshBasicMaterial({ color: "#00ffff", overdraw: 1 });
+  var material = new three.MeshBasicMaterial({ color: "#00ffff", overdraw: true });
   var cube = new three.Mesh(geometry, material);
   scene.add(cube);
+
+  var geometry2 = new three.BoxGeometry(0.3, 0.3, 0.0001);
+  var material2 = new three.MeshBasicMaterial({ color: "#008800", overdraw: true });
+  var cube2 = new three.Mesh(geometry2, material2);
+  cube2.position.z = 0.0001;
+  scene.add(cube2);
 
   camera.position.z = 2;
 
